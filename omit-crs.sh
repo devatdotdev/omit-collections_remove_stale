@@ -8,6 +8,7 @@ log="error_log"
 while IFS= read -r line
   do
     # Remove 'collections_remove_stale' lines
-    echo "$line"
+    [[ ! $line =~ 'collections_remove_stale' ]] && echo "$line"
     # OPTIONAL - create another log file with the omitted results
-  done < "$log"
+  done < "$log" > o
+mv o $log
