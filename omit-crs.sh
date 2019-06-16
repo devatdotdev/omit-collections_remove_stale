@@ -2,7 +2,7 @@
 #
 
 # File to watch ('error_log' for apache2)
-log="error_log"
+log="/var/log/apacche2/error_log"
 
 # Read file line by line
 while IFS= read -r line
