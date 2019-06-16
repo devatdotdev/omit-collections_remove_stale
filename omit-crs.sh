@@ -3,7 +3,7 @@
 # .Dev
 
 # File to watch ('error_log' for apache2)
-log="/var/log/apacche2/error_log"
+log="/var/log/apache2/error_log"
 
 # Read file line by line
 inotifywait -q -m -e close_write $log |
