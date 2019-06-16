@@ -1,5 +1,6 @@
 # Read error_log and remove 'collections_remove_stale' lines
 #
+# .Dev
 
 # File to watch ('error_log' for apache2)
 log="/var/log/apacche2/error_log"
