@@ -13,10 +13,9 @@ staleFile="stale.log"
 # inotifywait -q -m -e close_write $log |
 # (work in progress)
 
+# read file line by line IFS is to prevent whitespace trimming
 while IFS= read -r line
   do
-    # Remove 'collections_remove_stale' lines
+    # Remove 'collections_remove_stale' lines && log the removed entries to another file
     [[ ! $line =~ 'collections_remove_stale' ]] && echo "$line" > $staleFile
-    # OPTIONAL - create another log file with the omitted results
   done < "$log"
-mv o $log
