@@ -16,7 +16,7 @@ staleFile="stale.log"
 while IFS= read -r line
   do
     # Remove 'collections_remove_stale' lines
-    [[ ! $line =~ 'collections_remove_stale' ]] && echo "$line" < "$staleFile"
+    [[ ! $line =~ 'collections_remove_stale' ]] && echo "$line" > $staleFile
     # OPTIONAL - create another log file with the omitted results
   done < "$log"
 mv o $log
