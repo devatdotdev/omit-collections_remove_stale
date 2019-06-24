@@ -6,7 +6,12 @@
 log="/var/log/apache2/error_log"
 
 # Read file line by line
-inotifywait -q -m -e close_write $log |
+# Use inotifywait to watch the file and omit lines automatically
+#
+
+# inotifywait -q -m -e close_write $log |
+# (work in progress)
+
 while IFS= read -r line
   do
     # Remove 'collections_remove_stale' lines
