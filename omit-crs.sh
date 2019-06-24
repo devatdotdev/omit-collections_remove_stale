@@ -17,5 +17,5 @@ while IFS= read -r line
     # Remove 'collections_remove_stale' lines
     [[ ! $line =~ 'collections_remove_stale' ]] && echo "$line"
     # OPTIONAL - create another log file with the omitted results
-  done <log > o
+  done < "$log"
 mv o $log
